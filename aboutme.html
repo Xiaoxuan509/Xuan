@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我 | 小軒的網站</title>
+  <link rel="icon" type="image/png" href="images/headhead.png">
+  <link rel="stylesheet" href="exp.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">小軒的網站</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="#">關於我</a></li>
+        <li><a href="#">更多</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="切換選單">☰</button>
+    <div class="overlay"></div>
+  </header>
+
+  <section class="news">
+    <h2>關於我</h2>
+  </section>
+
+  <section class="aboutme">
+    <h2>自我介紹</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <h3>專長</h3>
+        <p>打字速度快，轉魔術方塊，攝影，打保齡球。</p>
+      </div>
+      <div class="timeline-item right">
+        <h3>技能</h3>
+        <p>編寫 Python、C++ 程式語言、電路板焊接、設計電路、網站設計，曾使用Esp32、WiFiBoy、Arduino應用在真實生活中，現在也是選手身分。</p>
+      </div>
+      <div class="timeline-item left">
+        <h3>未來目標</h3>
+        <p>參加技能競賽，獲得榮譽為國爭光。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="copyright">
+    <p>Copyright © 2025 Xiaoxuan</p>
+  </div>
+
+  <script>
+    // 時間軸進場動畫
+    window.addEventListener("scroll", function () {
+      const items = document.querySelectorAll(".timeline-item");
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          item.classList.add("show");
+        }
+      });
+    });
+
+    // 手機版選單切換
+    const toggleButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('nav ul');
+    const overlay = document.querySelector('.overlay');
+
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
