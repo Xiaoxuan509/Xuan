@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於我 | 小軒的網站</title>
+  <title>作品 | 小軒的網站</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/headhead.png">
   <link rel="stylesheet" href="more.css">
 </head>
+
 <body>
   <header>
     <h1><a href="index.html">小軒的網站</a></h1>
@@ -14,7 +17,7 @@
       <ul>
         <li><a href="index.html">首頁</a></li>
         <li><a href="aboutme.html">關於我</a></li>
-        <li><a href="more.html">更多</a></li>
+        <li><a href="more.html">作品</a></li>
       </ul>
     </nav>
     <button class="menu-toggle" aria-label="切換選單">☰</button>
@@ -22,41 +25,27 @@
   </header>
 
   <section class="news">
-    <h2>更多</h2>
+    <h2>作品</h2>
+  </section>
+  <section class="project">
+    <div>
+      <img src="images/block.png" alt="●俄羅斯方塊小遊戲">
+      <blockquote><strong>●俄羅斯方塊小遊戲</strong></blockquote>
+      <p>利用Arduino UNO 搭配 OLED 來製作俄羅斯方塊遊戲，可使用藍、綠按鈕移動方塊，使用黑色按鈕控制方向和速度</p>
+    </div>
+    <div>
+      <a href="calc.html"><img src="images/calc.png" alt="●線上計算機"></a>
+      <blockquote><strong>●線上計算機</strong></blockquote>
+      <p>利用html、css、javascript設計出一台線上的計算機，能夠做一些簡單的計算</p>
+    </div>
   </section>
 
- 
 
   <div class="copyright">
     <p>Copyright © 2025 Xiaoxuan</p>
   </div>
 
-  <script>
-    // 時間軸進場動畫
-    window.addEventListener("scroll", function () {
-      const items = document.querySelectorAll(".timeline-item");
-      items.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          item.classList.add("show");
-        }
-      });
-    });
-
-    // 手機版選單切換
-    const toggleButton = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('nav ul');
-    const overlay = document.querySelector('.overlay');
-
-    toggleButton.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-      menu.classList.remove('show');
-      overlay.classList.remove('show');
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
+
 </html>
