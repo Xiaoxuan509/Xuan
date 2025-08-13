@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="resistancemain.css">
+  <title>分壓計算器</title>
+</head>
+
+<body>
+  <header>
+        <h1><a href="index.html">小軒的網站</a></h1>
+        <nav>
+            <ul>
+                <li><a href="more.html">返回作品</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <div class="main-container">
+    <h2>分壓計算器 (Vin = 5V)</h2>
+
+    <label for="r1">電阻 R1 (Ω)</label>
+    <input type="text" id="r1" placeholder="請輸入R1數值">
+
+    <label for="r2">電阻 R2 (Ω)</label>
+    <input type="text" id="r2" placeholder="請輸入R2數值" />
+
+    <button onclick="calculateVoltage()">計算輸出電壓 Vout</button>
+
+    <div id="result"></div>
+
+    <div class="photo">
+      <img src="photo.png" alt="電路圖" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+
+  <script src="resistanceapp.js"></script>
+</body>
+
+</html>

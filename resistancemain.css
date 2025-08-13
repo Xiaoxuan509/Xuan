@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f0f8ff;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 頂部固定導航欄 */
+header {
+  background-color: rgba(38, 65, 65, 0.8);
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5vw;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+header h1 {
+  position: relative;
+  line-height: 75px;
+  background-image: url(images/head.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  text-indent: 70px;
+  font-size: 30px;
+  transition: left 0.3s ease;
+}
+
+header h1 a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+/* 導航 */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+  line-height: 80px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav li a:hover {
+  background-color: rgba(38, 65, 65, 0.5);
+  transform: scale(1.1);
+}
+
+/* 主內容卡片 */
+.main-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 480px;
+  margin-top: 120px; /* 留空讓 header 不擋 */
+}
+
+/* 標題 */
+h2 {
+  text-align: center;
+  color: #007ACC;
+  margin-bottom: 20px;
+}
+
+/* 表單元素 */
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007ACC;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005f99;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 20px;
+  text-align: center;
+  color: #005f99;
+  font-weight: bold;
+}
+
+/* 圖片置中 */
+.photo {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    left: 15%;
+    transform: translateX(-15%);
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
