@@ -9,14 +9,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f0f8ff;
+  background-color: #0F172A;
+  color: #E2E8F0; /* 全域文字淺灰白 */
   min-height: 100vh;
-  color: #333;
 }
 
 /* 頂部固定導航欄 */
 header {
-  background-color: rgba(38, 65, 65, 0.8);
+  background-color: rgba(15, 23, 42, 0.9);
   color: whitesmoke;
   display: flex;
   justify-content: space-between;
@@ -43,7 +43,7 @@ header h1 {
 }
 
 header h1 a {
-  color: whitesmoke;
+  color: #22D3EE;
   text-decoration: none;
 }
 
@@ -66,7 +66,8 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color: rgba(38, 65, 65, 0.5);
+  background-color: #8B5CF6;
+  color: #FACC15;
   transform: scale(1.1);
 }
 
