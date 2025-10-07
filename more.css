@@ -1,20 +1,22 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
 body {
-  overflow-x: hidden;
-  font-family: 'Microsoft JhengHei', sans-serif;
-  scroll-behavior: smooth;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0F172A;
+  color: #E2E8F0; /* 全域文字淺灰白 */
+  min-height: 100vh;
 }
 
-
+/* 頂部固定導航欄 */
 header {
-  background-color: rgba(38, 65, 65, 0.8);
+  background-color: rgba(15, 23, 42, 0.9);
   color: whitesmoke;
   display: flex;
   justify-content: space-between;
@@ -31,8 +33,6 @@ header {
 
 header h1 {
   position: relative;
-  left: 0;
-  top: 0;
   line-height: 75px;
   background-image: url(images/head.png);
   background-repeat: no-repeat;
@@ -43,24 +43,16 @@ header h1 {
 }
 
 header h1 a {
-  color: whitesmoke;
+  color: #22D3EE;
   text-decoration: none;
 }
 
-/* Nav menu */
+/* 導航 */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
-  position: relative;
-  right: 0;
-  top: 0;
   line-height: 80px;
-  transition: right 0.3s ease;
-}
-
-nav li {
-  display: inline;
 }
 
 nav li a {
@@ -74,203 +66,83 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color: rgba(38, 65, 65, 0.5);
+  background-color: #8B5CF6;
+  color: #FACC15;
   transform: scale(1.1);
 }
 
-.news {
-  background-image: url(images/23.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  height: 95vh;
-  padding-top: 120px;
-  /* 避免被fixed header擋住 */
-  text-align: center;
-  animation: fadeInUp 1s ease forwards;
-}
-
-.news h2 {
-  font-size: 70px;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.project {
-  display: flex;
-  background-color: antiquewhite;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 80px 5vw 100px;
-  gap: 30px;
-  animation: fadeInUp 3s ease forwards;
-}
-
-.project blockquote {
-  font-size: 25px;
-}
-
-.project div {
-  max-width: 600px;
-  text-align: center;
-  background: white;
-  padding: 20px;
+/* 主內容卡片 */
+.main-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project div:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.project img {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: auto;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s;
-  cursor: pointer;
+  max-width: 480px;
+  margin-top: 120px; /* 留空讓 header 不擋 */
 }
 
-
-@keyframes flicker {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
+/* 標題 */
+h2 {
+  text-align: center;
+  color: #007ACC;
+  margin-bottom: 20px;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* 表單元素 */
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
 }
 
-.menu-toggle {
-  display: none;
-  position: absolute;
-  right: 6vw;
-  top: 50%;
-  /* 垂直置中 */
-  transform: translateY(-50%);
-  /* 將元素上移自身高度的一半，做到精準垂直置中 */
-  font-size: 28px;
-  background: none;
+input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007ACC;
   border: none;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
-  z-index: 3000;
-  user-select: none;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.menu-toggle:hover {
-  color: #ffcc70;
+button:hover {
+  background-color: #005f99;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 3500;
-  display: none;
+#result {
+  margin-top: 25px;
+  font-size: 20px;
+  text-align: center;
+  color: #005f99;
+  font-weight: bold;
 }
 
-/* 漢堡選單開啟狀態 */
-nav ul.show {
-  right: 0 !important;
+/* 圖片置中 */
+.photo {
+  display: flex;
+  justify-content: center;
 }
 
-.overlay.show {
-  display: block;
-}
-
-/* RWD 直式版 */
 @media screen and (max-width: 768px) {
   header h1 {
-    left: 50%;
-    transform: translateX(-50%);
-    line-height: 55px;
+    left: 15%;
+    transform: translateX(-15%);
   }
-
-  .news h2 {
-    font-size: 40px;
+  h1 {
+    font-size: 30px;
   }
-
-  nav ul {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 260px;
-    height: 100vh;
-    background: rgba(38, 65, 65, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 80px 30px;
-    box-shadow: -6px 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 20px 0 0 20px;
-    transition: right 0.3s ease;
-    z-index: 4000;
-  }
-
-  nav li {
-    margin: 20px 0;
-  }
-
-  nav li a {
-    color: #ffffff;
-    font-size: 18px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* 進場浮動動畫 */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* copyright 區塊 */
-.copyright {
-  background: linear-gradient(45deg, #2c2c2c, #444);
-  color: #ddd;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 14px;
-  letter-spacing: 1px;
 }
