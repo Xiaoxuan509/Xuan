@@ -10,15 +10,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #e5f0ff, #2f86ff);
-  color: #fff;
+  background-color: #0F172A;
+  color: #E2E8F0; /* 全域文字淺灰白 */
   margin: 0;
   overflow: hidden;
 }
 
 header {
-  background-color: rgba(38, 65, 65, 0.8);
-  color: whitesmoke;
+  background-color: rgba(15, 23, 42, 0.95);
+  color: #E2E8F0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +46,7 @@ header h1 {
 }
 
 header h1 a {
-  color: whitesmoke;
+  color: #22D3EE;
   text-decoration: none;
 }
 
