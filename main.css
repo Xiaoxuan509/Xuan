@@ -9,13 +9,14 @@ body {
   overflow-x: hidden;
   font-family: 'Microsoft JhengHei', sans-serif;
   scroll-behavior: smooth;
-  background-color: #f4f4f4;
+  background-color: #0F172A;
+  color: #E2E8F0; /* 全域文字淺灰白 */
 }
 
 
 header {
-  background-color: rgba(38, 65, 65, 0.8);
-  color: whitesmoke;
+  background-color: rgba(15, 23, 42, 0.95);
+  color: #E2E8F0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +44,7 @@ header h1 {
 }
 
 header h1 a {
-  color: whitesmoke;
+  color: #22D3EE;
   text-decoration: none;
 }
 
@@ -64,7 +65,7 @@ nav li {
 }
 
 nav li a {
-  color: white;
+  color: #E2E8F0;
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
@@ -74,7 +75,8 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color: rgba(38, 65, 65, 0.5);
+  background-color: #8B5CF6;
+  color: #FACC15;
   transform: scale(1.1);
 }
 
@@ -87,7 +89,7 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #22D3EE;
   height: 95vh;
   padding-top: 120px;
   /* 避免被fixed header擋住 */
@@ -102,12 +104,12 @@ nav li a:hover {
 }
 
 .news p {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(30, 41, 59, 0.7);
   max-width: 800px;
   width: 90%;
   padding: 20px;
   margin: 20px auto;
-  border: 2px solid gray;
+  border: 2px solid #0EA5E9;
   border-radius: 20px;
   font-size: 20px;
   line-height: 2;
@@ -116,6 +118,7 @@ nav li a:hover {
   justify-content: center;
   align-items: center;
   animation: fadeInUp 1.5s ease forwards;
+  color: #E2E8F0;
 }
 
 /* 個人圖片區 */
@@ -155,12 +158,12 @@ nav li a:hover {
   max-width: 500px;
   font-size: 18px;
   line-height: 1.8;
-  color: #333;
+  color: #94A3B8;
 }
 
 .per-container .info h3 {
   font-size: 28px;
-  color: #0094FF;
+  color: #0EA5E9;
   margin-bottom: 20px;
 }
 
@@ -173,7 +176,7 @@ nav li a:hover {
   align-items: center;
   font-size: 60px;
   color: transparent;
-  background-image: linear-gradient(45deg, #ff7f50, #ffcc70);
+  background-image: linear-gradient(90deg, #0EA5E9, #8B5CF6, #22D3EE);
   -webkit-background-clip: text;
   background-clip: text;
   animation: flicker 2.5s infinite alternate;
@@ -205,7 +208,7 @@ nav li a:hover {
 
 /* 榮譽列表 */
 .honor-list {
-  background-color: fff8e1;
+  background-color: #0F172A;
   padding: 60px 20px;
   text-align: center;
   max-width: 900px;
@@ -219,26 +222,26 @@ nav li a:hover {
 }
 
 .honor-list li {
-  background-color: #fff8e1;
-  border: 2px solid #ffcc70;
+  background-color: #1E293B;
+  border: 2px solid #0EA5E9; /* 藍光邊框 */
+  color: #E2E8F0;
   padding: 15px 20px;
   margin-bottom: 20px;
   border-radius: 15px;
   font-size: 22px;
-  color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
 }
 
 .honor-list li:hover {
   transform: translateY(-5px);
-  background-color: #fffaee;
+  background-color: #334155;
 }
 
 /* 獲獎照片區 */
 .photo {
   display: flex;
-  background-color: antiquewhite;
+  background-color: #0F172A;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
@@ -255,8 +258,9 @@ nav li a:hover {
 .photo img {
   width: 100%;
   height: auto;
-  background-color: white;
-  border-radius: 15px;
+  background-color: #1E293B;
+  border: 2px solid #22D3EE;
+  border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s;
   cursor: pointer;
@@ -268,8 +272,8 @@ nav li a:hover {
 
 /* footer */
 .copyright {
-  background-color: #2c2c2c;
-  color: #ddd;
+  background-color: #1E293B;
+  color: #94A3B8;
   font-size: 14px;
   letter-spacing: 1px;
   height: 100px;
@@ -346,7 +350,7 @@ nav ul.show {
     right: -300px;
     width: 260px;
     height: 100vh;
-    background: rgba(38, 65, 65, 0.95);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
     padding: 80px 30px;
     box-shadow: -6px 0 20px rgba(0, 0, 0, 0.1);
