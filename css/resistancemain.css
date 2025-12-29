@@ -34,7 +34,7 @@ header {
 header h1 {
   position: relative;
   line-height: 75px;
-  background-image: url(images/head.png);
+  background-image: url(/images/head.png);
   background-repeat: no-repeat;
   background-position: left center;
   text-indent: 70px;
