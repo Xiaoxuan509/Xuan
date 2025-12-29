@@ -35,7 +35,7 @@ header h1 {
   left: 0;
   top: 0;
   line-height: 75px;
-  background-image: url(images/head.png);
+  background-image: url(/images/head.png);
   background-repeat: no-repeat;
   background-position: left center;
   text-indent: 70px;
@@ -82,7 +82,7 @@ nav li a:hover {
 
 /* 自我介紹區 */
 .news {
-  background-image: url(images/2.jpg);
+  background-image: url(/images/2.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
