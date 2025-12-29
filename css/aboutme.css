@@ -35,7 +35,7 @@ header h1 {
   left: 0;
   top: 0;
   line-height: 75px;
-  background-image: url(images/head.png);
+  background-image: url(/images/head.png);
   background-repeat: no-repeat;
   background-position: left center;
   text-indent: 70px;
@@ -81,7 +81,7 @@ nav li a:hover {
 }
 
 .news {
-  background-image: url(images/55頒獎.jpg);
+  background-image: url(/images/55頒獎.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
