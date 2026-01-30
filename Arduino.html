@@ -14,7 +14,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -68,7 +68,7 @@
                                 d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                         </svg>
                     </button>
-                    <pre><code class="language-cpp">
+                    <pre class="code-scroll"><code class="language-cpp">
 void setup() {
   pinMode(13, OUTPUT); // 設定第13接腳為輸出
 }
@@ -96,7 +96,7 @@ void loop() {
                     <p>在Arduino語法中，若要執行超過兩次的重複動作，就可以用for迴圈來撰寫，先設定初始變數 i 當作迴圈變數，下一段指定迴圈的範圍，最後一段指令迴圈的動作是要加還是減</p>
                     <img src="images/fordefine.png" alt="">
                     <p><strong>● for迴圈範例： (使用<a href="https://www.tinkercad.com/" target="_blank"
-                            style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                                style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
                     <img src="images/forled.png" alt="">
                     <div class="code-block">
                         <button class="copy-btn" onclick="copyCode(this)">
@@ -106,7 +106,7 @@ void loop() {
                                     d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                             </svg>
                         </button>
-                        <pre>
+                        <pre class="code-scroll">
                             <code class="language-cpp">
 // 定義 LED 使用的 12 個腳位（用陣列管理）
 const int pins[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };  
@@ -176,7 +176,7 @@ void loop() {
                                     d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                             </svg>
                         </button>
-                        <pre>
+                        <pre class="code-scroll">
 <code class="language-cpp">
 #define traffic_light_Red 2     // 定義紅燈接在 Arduino 腳位 2
 #define traffic_light_Yellow 3  // 定義黃燈接在 Arduino 腳位 3
