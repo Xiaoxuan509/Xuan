@@ -200,7 +200,7 @@ header ul li a:hover {
   line-height: 1.5;
   margin: 20px 0;
   border-left: 5px solid var(--accent-blue); /* 側邊裝飾線 */
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 
@@ -225,6 +225,13 @@ header ul li a:hover {
   transition: all 0.3s;
   z-index: 10;
 }
+
+.code-scroll {
+  overflow-x: auto;
+  padding: 20px;
+  margin: 0;
+}
+
 
 .copy-btn:hover {
   background-color: var(--accent-blue);
