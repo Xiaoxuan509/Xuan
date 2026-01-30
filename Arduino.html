@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino教學 | 小軒個人網站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/headhead.png">
+    <link rel="stylesheet" href="css/Arduino.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/arduino-dark.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Xuan的網站</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="aboutme.html">關於我</a></li>
+                <li><a href="more.html">作品</a></li>
+                <li><a href="teach.html">教學</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="切換選單">☰</button>
+        <div class="overlay"></div>
+    </header>
+
+    <div class="news">
+        <h2>Arduino教學</h2>
+    </div>
+
+    <div class="container">
+        <aside class="topic">
+            <h3>目錄</h3>
+            <ul>
+                <li><a href="#intro">Arduino 介紹</a></li>
+                <li><a href="#led">LED 閃爍</a></li>
+                <li><a href="#for">for迴圈</a></li>
+                <li><a href="#traffic-light">紅綠燈實作</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <section id="intro">
+                <h2>Arduino 介紹</h2>
+                <p>Arduino是一個開源的微控制器開發平台，結合了簡單易用的硬體電路板和基於C/C++的軟體開發環境 (IDE)，讓初學者和專業人士都能輕鬆製作能感應環境並控制電子元件的互動式裝置 (如下圖)。</p>
+
+
+                <img src="images/arduino(real).png" alt="">
+
+            </section>
+
+            <section id="led">
+                <h2>LED 閃爍 (Blink)</h2>
+                <p>Arduino 入門實習，讓內建的 LED 每秒閃爍一次。</p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                        </svg>
+                    </button>
+                    <pre><code class="language-cpp">
+void setup() {
+  pinMode(13, OUTPUT); // 設定第13接腳為輸出
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // 點亮 LED
+  delay(1000);
+  digitalWrite(13, LOW);  // 熄滅 LED
+  delay(1000);
+}
+</code>
+</pre>
+
+                </div>
+
+
+                <img src="images/arduinoLED.png" alt="">
+                <p><strong>● Arduino上的LED的腳位與D13腳位串接，寫程式時直接寫13即可</strong></p>
+
+                </sectio>
+
+                <section id="for">
+                    <h2>for迴圈</h2>
+
+                    <p>在Arduino語法中，若要執行超過兩次的重複動作，就可以用for迴圈來撰寫，先設定初始變數 i 當作迴圈變數，下一段指定迴圈的範圍，最後一段指令迴圈的動作是要加還是減</p>
+                    <img src="images/fordefine.png" alt="">
+                    <p><strong>● for迴圈範例： (使用<a href="https://www.tinkercad.com/" target="_blank"
+                            style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                    <img src="images/forled.png" alt="">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-copy" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </button>
+                        <pre>
+                            <code class="language-cpp">
+// 定義 LED 使用的 12 個腳位（用陣列管理）
+const int pins[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };  
+
+void setup() {
+  // 使用 for 迴圈，將所有 LED 腳位設為輸出
+  for (int i = 0; i < 12; i++) pinMode(pins[i], OUTPUT); 
+}
+
+void loop() {
+  for (int i = 0; i < 12; i++) {     // LED 由左到右依序亮起
+    digitalWrite(pins[i], 1);     // 第 i 顆 LED 亮
+    delay(100);  
+  }
+
+  for (int i = 0; i < 12; i++) {    // LED 由左到右依序熄滅
+    digitalWrite(pins[i], 0);       // 第 i 顆 LED 滅
+    delay(100);
+  }
+
+  for (int i = 11; i >= 0; i--) {   // LED 由右到左依序亮起
+    digitalWrite(pins[i], 1);       // 第 i 顆 LED 亮
+    delay(100);
+  }
+
+  for (int i = 11; i >= 0; i--) {   // LED 由右到左依序熄滅
+    digitalWrite(pins[i], 0);       // 第 i 顆 LED 滅
+    delay(100);
+  }
+
+  for (int j = 0; j < 3; j++) {     // 整組奇偶閃爍重複 3 次
+    for (int i = 0; i < 12; i += 2) 
+        digitalWrite(pins[i], 1);   // 偶數索引 LED（0,2,4...）亮
+    for (int i = 1; i < 12; i += 2) 
+        digitalWrite(pins[i], 0);   // 奇數索引 LED（1,3,5...）滅
+    delay(200);
+
+    for (int i = 0; i < 12; i += 2) 
+        digitalWrite(pins[i], 0);   // 偶數索引 LED 滅
+    for (int i = 1; i < 12; i += 2) 
+        digitalWrite(pins[i], 1);   // 奇數索引 LED 亮
+    delay(200);
+  }
+
+  for (int i = 0; i < 12; i++) digitalWrite(pins[i], LOW);  // LED 最後都熄滅
+}
+
+                            </code>
+                        </pre>
+                    </div>
+                    <p><strong>● for迴圈如果需要執行一行程式碼，則不需要大括號，一行以上則需要，if也是同觀念</strong></p>
+                </section>
+
+                <section id="traffic-light">
+                    <h2>紅綠燈實作</h2>
+                    <p>利用紅、黃、綠三顆 LED，模擬馬路上的紅綠燈切換邏輯，<strong>紅燈亮5秒，綠燈亮3秒，黃燈亮2秒。</strong></p>
+                    <p><strong>所需材料：</strong> 紅/黃/綠 LED、220Ω 電阻 x3、麵包板。(電路接法如下圖)</p>
+
+                    <img src="images/arduino rgy.png" alt="">
+
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-copy" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </button>
+                        <pre>
+<code class="language-cpp">
+#define traffic_light_Red 2     // 定義紅燈接在 Arduino 腳位 2
+#define traffic_light_Yellow 3  // 定義黃燈接在 Arduino 腳位 3
+#define traffic_light_Green 4   // 定義綠燈接在 Arduino 腳位 4
+
+void setup() {
+  // 使用 for 迴圈，將 2~4 腳位設為輸出（紅黃綠燈）
+  for (int i = 2; i <= 4; i++) pinMode(i, OUTPUT);
+}
+
+void loop() {
+  traffic_light_Control(1); // 呼叫函式，顯示紅燈
+  delay(5000);
+  traffic_light_Control(3); // 呼叫函式，顯示綠燈
+  delay(3000);
+  traffic_light_Control(2); // 呼叫函式，顯示黃燈
+  delay(2000);
+}
+
+// 副程式寫法
+void traffic_light_Control(int number) {
+  // 當 number 為 1 時紅燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Red, number == 1);     
+
+  // 當 number 為 2 時黃燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Yellow, number == 2);
+
+  // 當 number 為 3 時綠燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Green, number == 3);
+}</code>
+                    </pre>
+                    </div>
+                </section>
+        </main>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2026 Xiaoxuan</p>
+    </div>
+
+    <script src="js/arduino.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
