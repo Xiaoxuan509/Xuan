@@ -194,7 +194,7 @@ header ul li a:hover {
 .code-block {
   background: var(--arduino-bg);
   font-size: large;
-  padding: 20px;
+  padding: 5px;
   border-radius: 8px;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* 使用等寬字型 */
   line-height: 1.5;
@@ -207,7 +207,7 @@ header ul li a:hover {
 /* 讓容器變成定位基準 */
 .code-block {
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 /* 複製按鈕樣式 */
