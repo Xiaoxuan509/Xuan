@@ -42,7 +42,8 @@
             <ul>
                 <li><a href="#intro">Arduino 介紹</a></li>
                 <li><a href="#led">LED 閃爍</a></li>
-                <li><a href="#for">for迴圈</a></li>
+                <li><a href="#for">for 迴圈</a></li>
+                <li><a href="#if">if 判斷式</a></li>
                 <li><a href="#traffic-light">紅綠燈實作</a></li>
             </ul>
         </aside>
@@ -159,6 +160,67 @@ void loop() {
                     </div>
                     <p><strong>● for迴圈如果需要執行一行程式碼，則不需要大括號，一行以上則需要，if也是同觀念</strong></p>
                 </section>
+
+                <section id="if">
+                    <h2>if判斷式</h2>
+                    <p>if判斷式用來根據條件執行不同的程式碼區塊，基本語法如下：</p>
+                    <img src="images/ifdefine.png" alt="">
+
+                    <img src="images/if.png" alt="">
+
+                    <p><strong>● if 判斷按鈕實作： (使用<a href="https://www.tinkercad.com/" target="_blank"
+                                style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                    <img src="images/ifarduino.png" alt="">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-copy" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </button>
+                        <pre class="code-scroll">
+<code class="language-cpp">
+#define Red 7     // 定義紅燈接在第 7 腳
+#define Blue 5    // 定義藍燈接在第 5 腳
+#define Green 4   // 定義綠燈接在第 4 腳
+
+#define ButtonPin1 12   // 定義按鈕1接在第 12 腳
+#define ButtonPin2 9    // 定義按鈕1接在第 9 腳
+
+void setup() {
+  pinMode(Red, OUTPUT);
+  pinMode(Blue, OUTPUT);
+  pinMode(Green, OUTPUT);
+
+  // 使用內建上拉電阻，按鈕未按下時為 1，按下時為 0
+  pinMode(ButtonPin1, INPUT_PULLUP);
+  pinMode(ButtonPin2, INPUT_PULLUP);
+}
+
+void loop() {
+  // 讀取按鈕狀態 (0 代表按下)
+  int btn1 = digitalRead(ButtonPin1);
+  int btn2 = digitalRead(ButtonPin2);
+
+  // !btn => btn == 0
+  if (!btn1) LED_Control(2);      // 當按鈕 1 被按下，切換到模式 2 (亮藍燈)
+  else if (!btn2) LED_Control(3); // 按鈕 1 沒按，按鈕 2 按下，切換到模式 3(亮綠燈)
+  else LED_Control(1);                // 兩個都沒按時，維持模式 1 (亮紅燈)
+}
+
+// 燈號控制函式：根據傳入的數字切換燈號
+void LED_Control(int number) {
+  // 邏輯判斷：若 number 等於對應數字，則該腳位輸出 HIGH (1)
+  digitalWrite(Red, number == 1);
+  digitalWrite(Blue, number == 2);
+  digitalWrite(Green, number == 3);
+}
+</code>
+                        </pre>
+                    </div>
+                </section>
+
 
                 <section id="traffic-light">
                     <h2>紅綠燈實作</h2>
